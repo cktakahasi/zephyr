@@ -1,0 +1,24 @@
+/*
+ * Copyright (c) 2017 Christian Taedcke
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+/dts-v1/;
+#include <silabs/efm32hg.dtsi>
+
+/ {
+	model = "Silicon Labs EFM32HG SLSTK3400A board";
+	compatible = "silabs,efm32hg_slstk3400a", "silabs,efm32hg";
+
+	chosen {
+		zephyr,console = &uart1;
+		zephyr,sram = &sram0;
+		zephyr,flash = &flash0;
+	};
+};
+
+&uart1 {
+	current-speed = <115200>;
+	status = "ok";
+};
