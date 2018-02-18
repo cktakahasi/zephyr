@@ -1,0 +1,20 @@
+# Kconfig - EFM32HG series configuration options
+#
+# Copyright (c) 2018 Marcio Montenegro
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+
+if SOC_SERIES_EFM32HG
+
+config SOC_SERIES
+	default efm32hg
+
+config NUM_IRQS
+	int
+	# must be >= the highest interrupt number used
+	default 20
+
+source "arch/arm/soc/silabs_exx32/efm32hg/Kconfig.defconfig.e*"
+
+endif # SOC_SERIES_EFM32HG

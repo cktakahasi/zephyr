@@ -1,0 +1,43 @@
+#include <arm/armv6-m.dtsi>
+#include <silabs/mem.h>
+
+/ {
+	cpus {
+		cpu@0 {
+			compatible = "arm,cortex-m0+";
+		};
+	};
+
+	flash0: flash {
+		compatible = "soc-nv-flash";
+		label = "FLASH_0";
+		reg = <0 DT_FLASH_SIZE>;
+	};
+
+	sram0: memory {
+		reg = <0x20000000 DT_SRAM_SIZE>;
+	};
+
+	soc {
+		uart0: uart@4000c000 { /* USART0 */
+			compatible = "silabs,efm32-usart";
+			reg = <0x4000c000 0x400>;
+			interrupts = <17 0 18 0>;
+			status = "disabled";
+			label = "UART_0";
+		};
+
+		uart1: uart@4000c400 { /* USART1 */
+			compatible = "silabs,efm32-usart";
+			reg = <0x4000c400 0x400>;
+			interrupts = <8 0 9 0>;
+			status = "disabled";
+			label = "UART_1";
+		};
+
+	};
+};
+
+&nvic {
+	arm,num-irq-priority-bits = <2>;
+};
