@@ -44,7 +44,7 @@ if UART_GECKO_1
 
 config UART_GECKO_1_GPIO_LOC
 	int "Pin Locations"
-	range 0 3
+	range 0 4
 	depends on UART_GECKO
 	help
 	  The GPIO pins to use.
