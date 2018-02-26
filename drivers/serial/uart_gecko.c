@@ -329,8 +329,13 @@ static void uart_gecko_config_func_1(struct device *dev);
 #endif
 
 static const struct uart_gecko_config uart_gecko_1_config = {
-	.base = UART1,
+#ifdef CONFIG_SOC_PART_NUMBER_EFM32HG322F64
+	.base = USART1,
+	.clock = cmuClock_USART1,
+#else
+        .base = UART1,
 	.clock = cmuClock_UART1,
+#endif
 	.baud_rate = CONFIG_UART_GECKO_1_BAUD_RATE,
 	.pin_rx = PIN_UART1_RXD,
 	.pin_tx = PIN_UART1_TXD,
