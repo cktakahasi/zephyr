@@ -1,7 +1,7 @@
 .. _efm32hg_slstk3400a:
 
 EFM32HG-SLSTK3400A
-###############
+##################
 
 Overview
 ********
@@ -14,6 +14,8 @@ power capabilities.
    :width: 375px
    :align: center
    :alt: EFM32HG-SLSTK3400A
+
+EFM32HG-SLSTK3400A (image courtesy of Silicon Labs)
 
 Hardware
 ********
@@ -29,7 +31,7 @@ Hardware
 - Integrated SEGGER J-Link USB debugger/emulator with debug out functionality
 
 
-For more information about the EFM32HG SoC and EFM32HG-SLSTK3400A Happy Gecko Starter Kit:
+See these documents for more information
 
 - `EFM32HG Website`_
 - `EFM32HG Datasheet`_
@@ -65,7 +67,7 @@ Other hardware features are currently not supported by the port.
 Connections and IOs
 ===================
 
-The EFM32HG SoC has six gpio controllers (PORTA to PORTF), but only three are
+The EFM32HG SoC has six GPIO controllers (PORTA to PORTF), but only three are
 currently enabled (PORTB, PORTE and PORTF) for the EFM32HG-SLSTK3400A board.
 
 In the following table, the column Name contains Pin names. For example, PF4
@@ -121,7 +123,7 @@ board. The adaptor provides:
 - A physical UART connection which is relayed over interface USB Serial port.
 
 Flashing an application to EFM32-STK3800A
-----------------------------------------
+-----------------------------------------
 
 The sample application :ref:`hello_world` is used for this example.
 Build the Zephyr kernel and application:
@@ -131,9 +133,9 @@ Build the Zephyr kernel and application:
    :board: efm32hg_slstk3400a
    :goals: build
 
-Connect the EFM32HG-SLSTK3800A to your host computer using the USB port and you
-should see a USB connection which exposes a Mass Storage (STK3400) and a
-USB Serial Port. Copy the generated zephyr.bin in the STK3400 drive.
+Connect the EFM32HG-SLSTK3800A to your host computer using the USB port and
+you should see a USB connection that exposes a mass storage device (STK3400)
+and a USB Serial Port. Copy the generated zephyr.bin in the STK3400 drive.
 
 Open a serial terminal (minicom, putty, etc.) with the following settings:
 
@@ -142,8 +144,7 @@ Open a serial terminal (minicom, putty, etc.) with the following settings:
 - Parity: None
 - Stop bits: 1
 
-Reset the board and you should be able to see on the corresponding Serial Port
-the following message:
+Reset the board and you will see this message written to the serial port:
 
 .. code-block:: console
 
